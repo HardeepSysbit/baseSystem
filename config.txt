@@ -1,0 +1,11 @@
+﻿{
+    "appName": "baseSystem",
+    "dbName":  "baseSystem",
+    "dbType":  "mongoDb",
+    "webApiUrl": "http://localhost:3000",
+    "filesUrl": "http://localhost:3000",
+    "title": "Base System",
+    "version": "1.0.1",
+    "userId":"admin",
+    "pswd":"123456"
+}
