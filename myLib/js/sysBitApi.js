@@ -270,18 +270,25 @@
 
     //};
 
+    function upLoadFile(scope, objFile, bytFile, upLoadUrl) {
+
+        if (objFile.appName == undefined) {
+            objFile.appName = $rootScope.config.appName;
+        }
 
 
-    function upLoadFile(scope, metaData, file, upLoadUrl) {
+        var metaData = JSON.stringify(objFile);
+
+
 
         if (upLoadUrl == undefined) {
             upLoadUrl = $rootScope.config.filesUrl + '/upLoad';
-            }
+        }
 
         var upLoadApi = Upload.upload({
             url: upLoadUrl, //webAPI exposed to upload the file
             headers: { 'Content-Type': false, 'metaData': metaData },
-            data: file
+            data: bytFile
 
         }).progress(function (evt) {
             scope.progress = 'Progress ' + parseInt(100.0 * evt.loaded / evt.total) + ' %';
@@ -293,18 +300,45 @@
 
     };
 
-    function downLoadFile(url, appName, docLib, docSet, fileName, title) {
 
-        objFile = new Object();
-        objFile.appName = appName;
-        objFile.docLib = docLib;
-        objFile.docSet = docSet ;
-        objFile.fileName = fileName;
+    //function upLoadFile(scope, metaData, file, upLoadUrl) {
 
+    //    if (upLoadUrl == undefined) {
+    //        upLoadUrl = $rootScope.config.filesUrl + '/upLoad';
+    //        }
+
+    //    var upLoadApi = Upload.upload({
+    //        url: upLoadUrl, //webAPI exposed to upload the file
+    //        headers: { 'Content-Type': false, 'metaData': metaData },
+    //        data: file
+
+    //    }).progress(function (evt) {
+    //        scope.progress = 'Progress ' + parseInt(100.0 * evt.loaded / evt.total) + ' %';
+    //        //$scope.dynamic = parseInt(100.0 * evt.loaded / evt.total);
+    //    });
+
+
+    //    return (upLoadApi.then(handleSuccess, handleError));
+
+    //};
+
+    function downLoadFile(objFile, title, downLoadurl) {
+
+        if (downLoadurl == undefined) {
+            downLoadurl = $rootScope.config.filesUrl + '/downLoad/';
+        }
+
+        if (objFile.appName == undefined) {
+            objFile.appName = $rootScope.config.appName;
+        }
+
+
+
+    
 
         var metaData = JSON.stringify(objFile);
 
-        window.open(url + '/downLoad/?metaData=' + metaData, '',title, "width=200, height=100");   // Opens a new window
+        window.open(downLoadurl + '?metaData=' + metaData, '', title, "width=200, height=100");   // Opens a new window
 
 
 

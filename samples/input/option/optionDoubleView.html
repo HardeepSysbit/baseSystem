@@ -1,7 +1,7 @@
 ﻿
 <div class="form-group">
     <div><label for="xxxx" style="color:blue">xxxx</label></div>
-    <select class="form-control" name="xxxx" data-ng-options="xxxx.key as xxxx.value for xxxx in xxxxList" data-ng-disabled="disableControl()" data-ng-model=" data.xxxx" ng-required="true"></select>
+    <select class="form-control" name="xxxx" data-ng-options="item.key as item.value for item in xxxxList" data-ng-disabled="disableControl()" data-ng-model=" data.xxxx" ng-required="true"></select>
 
     <div ng-messages="masterForm.xxxx.$error" ng-show="masterForm.xxxx.$touched">
         <div ng-messages-include="myLib/mvc/msg/errMsgs.html"></div>
@@ -11,7 +11,7 @@
 
 <div class="form-group">
     <div><label for="yyyy" style="color:blue">yyyy</label></div>
-    <select class="form-control" name="yyyy" data-ng-options="yyyy.key as yyyy.value for yyyy in yyyyList | filter{ref:data.xxxx} " data-ng-disabled="disableControl()" data-ng-model=" data.yyyy" ng-required="true"></select>
+    <select class="form-control" name="yyyy" data-ng-options="item.key as item.value for item in yyyyList | filter{ref:data.xxxx} " data-ng-disabled="disableControl()" data-ng-model=" data.yyyy" ng-required="true"></select>
 
     <div ng-messages="masterForm.yyyy.$error" ng-show="masterForm.yyyy.$touched">
         <div ng-messages-include="myLib/mvc/msg/errMsgs.html"></div>

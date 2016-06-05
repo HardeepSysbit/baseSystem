@@ -42,8 +42,9 @@
 
     $scope.tablePop();
 
-    $scope.data.reset = false;
- 
+   // $scope.data.reset = false;
+
+   
 
         $scope.onSave = function () {
 
@@ -82,6 +83,10 @@
                 $scope.data.pswd = sysBitApi.hashCode(strUserId.trim() + strPswd.trim());
             }
            
+            if ($scope.data.reset == undefined) {
+                $scope.data.reset = false;
+            }
+
             $scope.$parent.onSave();
 
         }
