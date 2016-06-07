@@ -1,4 +1,4 @@
-﻿app.controller('logInController', function ($scope, $rootScope, $location, $window, $q, $timeout,  $http, Upload, sysBitApi) {
+﻿app.controller('logInController', function ($scope, $rootScope, $location, $window, $q, $timeout,  $http,  sysBitApi) {
 
         $rootScope.isLogIn = false;
         $rootScope.userClaims = {};
@@ -107,7 +107,7 @@
                     
                     $rootScope.token = objResp.data;                                    // save token for use in later submission
                     var objClaims = sysBitApi.getRightsList($rootScope.token);
-                    $rootScope.userId = objClaims.userId;
+                    $rootScope.user = objClaims.user;
 
                     if ($rootScope.config.dbType == "mongoDb") {
                         objClaims.rightsList = JSON.parse(objClaims.rightsList);

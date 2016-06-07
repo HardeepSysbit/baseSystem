@@ -6,9 +6,9 @@ $scope.progress = '';
 
 $scope.fileImg = function () {
 
-    if ($scope.data.file != undefined) {
+    if ($scope.local.file != undefined) {
 
-        var fileName = $scope.data.file.name;
+        var fileName = $scope.local.file.name;
 
         if (fileName != undefined && fileName != '') {
 
@@ -31,7 +31,7 @@ $scope.fileImg = function () {
 }
 
 
-var bytFile = { file: $scope.data.file };
+var bytFile = { file: $scope.local.file };
 
 var objFile = new Object();
 objFile.docLib = "xxxx";

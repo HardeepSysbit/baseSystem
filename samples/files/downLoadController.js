@@ -1,8 +1,9 @@
 ﻿
-var appName = "";
-var docLib = "";
-var docSet = "";
-var fileName = "";
 var title = "";
+var objFile = new Object();
+objFile.docLib = "xxxx";
+objFile.docSet = "yyyy";
+objFile.fileName = "zzzz";
 
-sysBitApi.downLoadFile(appName, docLib, docSet, fileName, title)
+
+sysBitApi.downLoadFile(objFile, title)

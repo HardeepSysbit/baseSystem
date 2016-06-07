@@ -433,12 +433,12 @@
                if ($scope.form.mode == $scope.form.updMode) {
 
                    objSave.dbAction = "update";
-                   objSave.data.updatedBy = $rootScope.userId;
+                   objSave.data.updatedBy = $rootScope.user.name;
                    objSave.data.updatedOn = strDateTimeNow;
                }
                else {
                    objSave.dbAction = "insert";
-                   objSave.data.createdBy = $rootScope.userId;
+                   objSave.data.createdBy = $rootScope.user.name;
                    objSave.data.createdOn = strDateTimeNow;
                }
 
@@ -450,12 +450,12 @@
                if ($scope.form.mode == $scope.form.updMode) {
 
                    objSave.dbSp = $scope.form.tableName + "Upd";
-                   objSave.data.updatedBy = $rootScope.userId;
+                   objSave.data.updatedBy = $rootScope.user.name;
                    objSave.data.updatedOn = strDateTimeNow;
                }
                else {
                    objSave.dbSp = $scope.form.tableName + "Ins";
-                   objSave.data.createdBy = $rootScope.userId;
+                   objSave.data.createdBy = $rootScope.user.name;
                    objSave.data.createdOn = strDateTimeNow;
                }
 

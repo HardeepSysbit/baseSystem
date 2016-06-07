@@ -1,6 +1,6 @@
 ﻿{
-    "appName": "baseSystem",
-    "dbName":  "baseSystem"",
+    "appName": "baseSystem1",
+    "dbName":  "baseSystem",
     "dbType":  "sql",
     "webApiUrl": "http://localhost:3000",
     "filesUrl": "http://localhost:3000",
